@@ -12,7 +12,7 @@ const getAllUsers = (req, res) =>{
 
 const getUserById = (req, res) =>{
     const id = req.params.id
-    usersControllers.getUserById()
+    usersControllers.getUserById(id)
     .then((data)=> {
         res.status(200).json(data)
     })
@@ -20,6 +20,7 @@ const getUserById = (req, res) =>{
         res.status(404).json({messege: err.message})
         })      
 }
+
 
 const registerUser = (req, res) => {
     const {
